@@ -1,0 +1,31 @@
+<header
+  class="bg-text-secondary text-center p-2 shadow shadow-black flex justify-between items-center gap-4"
+>
+  <div class="left flex items-center gap-4">
+    <i class="pi pi-user"></i>
+    <i class="pi pi-inbox"></i>
+    <i class="pi pi-bell"></i>
+  </div>
+  <div class="auth-btns flex gap-2">
+    @if (isLoggedIn) {
+    <button
+      (click)="logout()"
+      class="rounded bg-tpurple transition-all hover:opacity-70 cursor-pointer"
+    >
+      Logout
+    </button>
+    }@else {
+    <button
+      class="rounded bg-text-s-light transition-all hover:opacity-70 cursor-pointer"
+      (click)="toggleLoginDialog($event)"
+    >
+      Login
+    </button>
+    <button
+      class="rounded bg-tpurple transition-all hover:opacity-70 cursor-pointer"
+    >
+      Sign Up
+    </button>
+    }
+  </div>
+</header>

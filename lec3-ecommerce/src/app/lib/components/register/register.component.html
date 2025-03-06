@@ -1,0 +1,75 @@
+<form [formGroup]="form" class="flex flex-col gap-2 py-4 max-w-md mx-auto">
+  <!-- email -->
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <i class="pi pi-user"></i>
+    </p-inputgroup-addon>
+    <input pInputText placeholder="Emailaddress" formControlName="email" />
+  </p-inputgroup>
+
+  <!-- name -->
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <i class="pi pi-user"></i>
+    </p-inputgroup-addon>
+    <input pInputText placeholder="name" formControlName="name" />
+  </p-inputgroup>
+
+  <!-- username -->
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <i class="pi pi-user"></i>
+    </p-inputgroup-addon>
+    <input pInputText placeholder="Username" formControlName="username" />
+  </p-inputgroup>
+
+  <p-password
+    class="flex-1 flex [&>*]:w-full [&>*>input]:w-full"
+    formControlName="password"
+    placeholder="Password"
+    [toggleMask]="true"
+    [feedback]="false"
+  />
+  @if(form.dirty || form.touched){
+    @if (!isPasswordValid) {
+        <p-message
+          severity="error"
+          text="Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+        ></p-message>
+        } @else if (!isEmailValid) {
+        <p-message
+          severity="error"
+          text="Please enter a valid email address."
+        ></p-message>
+        } @else if (!isNameValid) {
+        <p-message severity="error" text="Please enter a valid name."></p-message>
+        } @else if( !isUsernameValid){
+        <p-message severity="error" text="Please enter a valid username."></p-message>
+        }@else if( form.invalid){
+        <p-message severity="error" text="enter valid details!"></p-message>
+        }@else {
+            <p-message severity="success" text="Registration successful!"></p-message>
+        }
+  }
+<!-- submit button -->
+  <p-button
+    label="Register"
+    (onClick)="onSubmit()"
+    type="submit"
+    styleClass="w-32"
+  ></p-button>
+  <!-- <p-inputgroup>
+    <p-inputgroup-addon>
+      <i class="pi pi-map"></i>
+    </p-inputgroup-addon>
+    <p-select
+      [options]="[
+        { name: 'New York' },
+        { name: 'San Francisco' },
+        { name: 'London' }
+      ]"
+      optionLabel="name"
+      placeholder="City"
+    />
+  </p-inputgroup> -->
+</form>

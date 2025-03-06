@@ -1,0 +1,32 @@
+.active {
+  color: red;
+}
+aside {
+  // box-shadow: 5px 5px 20px 0px rgba(221, 0, 255, 0.6);
+}
+//[&>*]:hover:bg-[var(--p-primary-hover-color)] [&>*]:p-2 [&>*]:text-2xl! [*>i]:text-[var(--p-primary-color)]
+a {
+  color: var(--p-primary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 8px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: all 0.15s ease;
+
+  i {
+    font-size: 1.4rem;
+    background-color: transparent;
+  }
+  &:hover {
+    background-color: var(--p-primary-hover-color);
+    color: var(--p-primary-inverse-color);
+  }
+  &.active {
+    background-color: var(--p-secondary-inverse-color);
+    color: var(--p-secondary-color);
+    i {
+    }
+  }
+}

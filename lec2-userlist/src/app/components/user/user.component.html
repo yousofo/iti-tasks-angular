@@ -1,0 +1,27 @@
+<figure class="user border rounded-lg border-green-500 p-4 text-center bg-gray-200">
+  <img
+    [src]="data()?.image"
+    alt="User avatar"
+    class="user-avatar max-w-28 rounded-full p-4 border border-green-500 overflow-hidden mx-auto bg-white"
+  />
+  <figcaption class="user-info flex flex-col justify-center items-center mt-4">
+    <h2
+      class="text-white px-6 py-1 rounded mb-4 text-sm"
+      [style.backgroundColor]="
+        data()?.role == 'admin'
+          ? 'red'
+          : data()?.role == 'user'
+          ? 'green'
+          : 'orange'
+      "
+    >
+      {{ data()?.role }}
+    </h2>
+    <ul class="">
+      <li class="user-name">{{ data()?.firstName }}</li>
+      <li class="user-email">{{ data()?.email }}</li>
+      <li>{{ data()?.phone }}</li>
+      <li>{{ data()?.birthDate }}</li>
+    </ul>
+  </figcaption>
+</figure>

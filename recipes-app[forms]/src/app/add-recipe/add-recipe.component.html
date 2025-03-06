@@ -1,0 +1,68 @@
+<!-- [] => property Binding -->
+<!-- () => Event Binding -->
+<h3>Two way data bidning</h3>
+{{ username }}
+<input [(ngModel)]="username" />
+
+<hr />
+
+<h3>Add Recipe | Template Deriven Forms</h3>
+<hr />
+
+<form #recipeForm="ngForm" (ngSubmit)="handleSubmitForm(recipeForm)">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Recipe name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="recipeNameId"
+      name="recipeName"
+      [(ngModel)]="formValues.recipeName"
+      required
+      minlength="3"
+      #recipeName="ngModel"
+    />
+    @if(recipeName.invalid && recipeName.touched){
+    <div id="recipeNameId" class="form-text text-danger">
+      @if(recipeName.hasError('required')){
+      <span>Required Field</span>
+      } @else if(recipeName.hasError('minlength')){
+      <span>Min length is 3 characters</span>
+      }
+    </div>
+    }
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Description</label>
+    <textarea
+      rows="5"
+      class="form-control"
+      id="exampleInputPassword1"
+      name="description"
+      [(ngModel)]="formValues.description"
+      required
+      minlength="10"
+      #description="ngModel"
+    ></textarea>
+    @if(description.invalid && description.touched){
+    <div id="descriptionId" class="form-text text-danger">
+      @if(description.hasError('required')){
+      <span>Required Field</span>
+      } @else if(description.hasError('minlength')){
+      <span>Min length is 10 characters</span>
+      }
+    </div>
+    }
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<!-- Import FormsModule -->
+<!-- <Form #referenceForm="ngForm" (ngSubmit)="handleSubmit(referenceForm)"> -->
+<!-- <Field name="fieldName" ngModel #fieldName="ngModel"> -->
+
+<!-- ERRORS -->
+
+<!-- fieldName.invalid & fieldName.touched -> .hasError('errorType') -->

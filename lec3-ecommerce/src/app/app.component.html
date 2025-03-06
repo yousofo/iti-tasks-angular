@@ -1,0 +1,16 @@
+
+<app-header />
+
+<div class="flex [&>*]:h-full overflow-hidden flex-1">
+  <app-sidebar class="yn-shadow z-20"/>
+  <div class="max-h-full overflow-y-auto bg-secondary flex flex-col justify-between flex-1">
+
+    <main class="main p-4 flex-1 w-full">
+      <router-outlet />
+    </main>
+    
+    <app-footer class="overflow-visible z-10 "/>
+  </div>
+</div>
+
+<app-login />

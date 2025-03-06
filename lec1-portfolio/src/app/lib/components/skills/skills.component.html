@@ -1,0 +1,31 @@
+<div class="skills text-bg-dark p-5 text-center">
+  <div class="container d-flex flex-column gap-4">
+    <p class="h1">Skills</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, et!
+      Cumque, in? Explicabo nobis voluptatem eligendi est doloremque voluptates,
+      eius placeat facilis unde aut voluptatibus hic cumque sapiente aliquam
+      sit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, et!
+      Cumque, in? Explicabo nobis voluptatem eligendi est doloremque voluptates,
+      eius placeat facilis unde aut voluptatibus hic cumque sapiente aliquam
+      sit? placeat facilis unde aut voluptatibus hic cumque sapiente aliquam
+      sit?
+    </p>
+    <div class="d-flex gap-5">
+      <div class="left me-5">
+        <p class="h6 border-bottom border-light p-4 pb-lg-3" style="font-size: 20px;">MY FOCUS</p>
+        <ul class="list-unstyled text-start">
+          <li class="p-1">UI/UX Design</li>
+          <li class="p-1">Reponsive Design</li>
+          <li class="p-1">Web Design</li>
+          <li class="p-1">Mobile App Design</li>
+        </ul>
+      </div>
+      <div class="right d-flex flex-column gap-3 flex-grow-1">
+        @for (item of items; track $index) {
+            <app-skill [name]="item.name" [level]="item.level" />
+        }
+      </div>
+    </div>
+  </div>
+</div>

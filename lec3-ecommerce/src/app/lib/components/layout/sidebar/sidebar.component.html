@@ -1,0 +1,58 @@
+<aside class="flex h-full shadow-md shadow-black">
+  <!-- narrow info buttons -->
+  <div
+    class="left flex flex-col gap-4 bg-gray-700 p-2 pe-0"
+    style="background-color: var(--p-primary-inverse-color)"
+    [class]="{ '[&>*]:!pe-4': productTypesCount==0 }"
+  >
+    <a
+      routerLinkActive="active"
+      routerLink="/"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <i class="pi pi-home"></i>
+    </a>
+    <a routerLinkActive="active" routerLink="bookmark">
+      <i class="pi pi-bookmark"></i>
+    </a>
+    <a routerLinkActive="active" routerLink="cart">
+      <i class="pi pi-shopping-bag"
+        >@if(productTypesCount>0) {<span class="ps-1 text-green-400">{{
+          productTypesCount
+        }}</span
+        >}</i
+      >
+    </a>
+    <a routerLinkActive="active">
+      <i class="pi pi-home"></i>
+    </a>
+    <a
+      routerLinkActive="active"
+      routerLink="settings"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <i class="pi pi-cog"></i>
+    </a>
+  </div>
+
+  <!-- wide info -->
+  <div
+    class="right bg-gray-400 text-white p-6 flex flex-col gap-4"
+    style="
+      color: var(--p-secondary-color);
+      background-color: var(--p-secondary-inverse-color);
+    "
+  >
+    <h2 class="font-bold mb-2 text-2xl p-primary-inverse-color">Dashboard</h2>
+    <a
+      routerLink="/"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active"
+      href=""
+      >Home</a
+    >
+    <a routerLink="/cart" routerLinkActive="active" href="">Cart</a>
+    <a routerLink="/bookmarks" routerLinkActive="active" href="">Bookmarks</a>
+    <a routerLink="/register" routerLinkActive="active" href="">Register</a>
+  </div>
+</aside>

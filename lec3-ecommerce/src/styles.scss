@@ -1,0 +1,53 @@
+@use "tailwindcss";
+@use "primeicons/primeicons.css";
+
+/* You can add global styles to this file, and also import other style files */
+:host {
+  @apply h-screen;
+}
+
+// PRIMENG primary
+.bg-primary {
+  @apply bg-[var(--p-primary-inverse-color)];
+}
+.text-primary {
+  @apply text-[var(--p-primary-color)];
+}
+.p-primary-hover {
+  @apply text-[var(--p-primary-hover-color)];
+}
+// .p-
+
+// PRIMENG secondary
+.text-secondary {
+  @apply text-[var(--p-secondary-color)];
+}
+.p-secondary-hover {
+  @apply text-[var(--p-secondary-hover-color)];
+}
+.bg-secondary {
+  @apply bg-[var(--p-secondary-inverse-color)];
+}
+.bg-text-secondary {
+  @extend .bg-secondary, .text-secondary;
+}
+.bg-s-light{
+    @apply bg-[var(--p-secondary-light-color)];
+}
+.text-s-light{
+    @apply text-[var(--p-secondary-light-color)];
+}
+.bg-s-light{
+    @apply bg-[var(--p-secondary-light-inverse-color)];
+}
+.bg-text-s-light{
+    @extend .bg-s-light, .text-s-light;
+}
+
+//T Purple
+.text-tpurple{
+    @apply text-[var(--p-tpurple)];
+}
+.bg-tpurple{
+    @apply bg-[var(--p-tpurple)];
+}

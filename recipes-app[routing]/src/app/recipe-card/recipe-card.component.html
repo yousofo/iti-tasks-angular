@@ -1,0 +1,38 @@
+<div class="card h-100">
+  <img
+    [src]="recipeItem().image"
+    class="card-img-top"
+    [alt]="recipeItem().name"
+  />
+  <div class="card-body">
+    @if(recipeItem().prepTimeMinutes < 10){
+    <span class="badge text-bg-success">Easy to go</span>
+    }@else {
+    <span class="badge text-bg-warning">Need time to prep.</span>
+    }
+    <h5
+      class="card-title"
+      [ngClass]="
+        recipeItem().cookTimeMinutes <= 15 ? 'text-success' : 'text-danger'
+      "
+    >
+      {{ recipeItem().name | uppercase }}
+    </h5>
+    <ul>
+      @for (ing of recipeItem().ingredients; track $index) {
+      <li>{{ ing }}</li>
+      }
+    </ul>
+    <p>{{ recipeItem().releaseDate | date : "short" }}</p>
+    <small class="text-body-secondary"
+      >Prep time in seconds:
+      {{ recipeItem().prepTimeMinutes | counter }} seconds.</small
+    >
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-primary" (click)="handleRedirect()">View</button>
+    <button class="btn btn-danger" (click)="handleDeleteRecipe()">
+      Delete Recipe
+    </button>
+  </div>
+</div>

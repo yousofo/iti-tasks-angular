@@ -1,0 +1,12 @@
+<div class="portfolio p-5 container">
+    <h3 class="display-5 fw-medium">
+        Portfolio
+    </h3>
+    <ul class="list-unstyled d-grid gap-3 p-5">
+        @for (name of names; track $index) {
+            <li class="h-100" [style.background]="$index % 2 == 0 ? '#9a8565' : '#4d4232' ">
+                <app-project [name]="name" />
+            </li>
+        }
+    </ul>
+</div>

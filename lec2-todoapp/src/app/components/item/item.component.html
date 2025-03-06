@@ -1,0 +1,23 @@
+<div class="item">
+  <div
+    class="flex items-center justify-between w-full bg-white p-4 rounded-md shadow-md"
+  >
+    <p-toast />
+    <p-confirmdialog />
+    <p class="text-lg font-semibold" [class.line-through]=" data()?.completed ">{{ data()?.description }}</p>
+    <div class="flex items-center space-x-2">
+      <button
+        (click)="complete($event)"
+        class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 cursor-pointer"
+      >
+        {{ data()?.completed ? "Undo" : "Complete" }}
+      </button>
+      <button
+        (click)="deleteItem($event)"
+        class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 cursor-pointer"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

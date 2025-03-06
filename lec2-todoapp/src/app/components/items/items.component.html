@@ -1,0 +1,59 @@
+<div class="users flex flex-col items-center justify-center gap-4 py-8">
+  <div class="users-header w-full">
+    <!-- start searchbar -->
+    <div class="bg-slate-700 px-8 py-8 w-full rounded">
+      <div>
+        <!-- enter somthing warning -->
+        <!-- <div class="flex space-x-1 items-center mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-red-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <p class="text-white text-lg font-semibold">
+                Please enter something
+              </p>
+            </div> -->
+        <div class="flex space-x-4">
+          <div class="flex rounded-md overflow-hidden w-full">
+            <input
+              [(ngModel)]="newItem"
+              type="text"
+              placeholder="enter new item"
+              class="w-full rounded-md rounded-r-none bg-white p-2 text-lg font-semibold"
+            />
+            <button
+              (click)="addItem()"
+              class="bg-indigo-600 text-white px-6 text-lg font-semibold py-2 rounded-r-md"
+            >
+              Add
+            </button>
+          </div>
+          <button
+            (click)="clearAll($event)"
+            class="bg-white px-6 text-lg font-semibold py-2 rounded-md hover:bg-gray-200 cursor-pointer"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end searchbar -->
+  </div>
+  <div class="users-content w-full flex flex-col items-center gap-4">
+    @for (item of items; track $index) {
+    <app-item [data]="item" (triggerParent)="refreshItems()" />
+    }
+  </div>
+</div>
+<p-toast />
+<p-confirmdialog />
