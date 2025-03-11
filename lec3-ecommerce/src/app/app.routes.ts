@@ -4,10 +4,15 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
     {
         path: '',
+        component: DashboardComponent
+    },
+    {
+        path: 'ttt',
         component: HomePageComponent
     },
     {
